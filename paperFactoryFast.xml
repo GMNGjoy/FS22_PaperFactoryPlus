@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="productionPoint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs22/placeable.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <parentFile xmlFilename="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/paperFactory.xml">
+        <attributes>
+            <set path="placeable.storeData.name" value="Paper Factory ++"/>
+            <set path="placeable.storeData.showInStore" value="true"/>
+            <set path="placeable.base.canBeDeleted" value="true"/>
+            <set path="placeable.storeData.price" value="131001"/>
+
+            <!-- overrides for files and includes -->
+            <set path="placeable.storeData.image" value="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/store_paperFactory.dds"/>
+            <set path="placeable.base.filename" value="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/paperFactory.i3d"/>
+            <set path="placeable.dynamicallyLoadedParts.dynamicallyLoadedPart(0)#filename" value="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/props.i3d"/>
+            <set path="placeable.productionPoint.sounds.idle#file" value="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/sounds/paperFactoryIdle.ogg"/>
+            <set path="placeable.productionPoint.sounds.active#file" value="$pdlcdir/forestryPack/placeables/productionPoints/paperFactory/sounds/paperFactoryWork.ogg"/>
+
+            <!-- replace the names of the original recipes since the translation engine is currently broken -->
+            <set path="placeable.productionPoint.productions.production(0)#name" value="$l10n_recipe_cartonRollWood" />
+            <set path="placeable.productionPoint.productions.production(0)#cyclesPerHour" value="20" />
+            <set path="placeable.productionPoint.productions.production(1)#name" value="$l10n_recipe_paperRollWood" />
+            <set path="placeable.productionPoint.productions.production(1)#cyclesPerHour" value="20" />
+
+            <!-- add a recipe for the carton rolls from wood chips -->
+            <set path="placeable.productionPoint.productions.production(2)#id" value="cartonRoll_chips" />
+            <set path="placeable.productionPoint.productions.production(2)#name" value="$l10n_recipe_cartonRollWoodChips" />
+            <set path="placeable.productionPoint.productions.production(2)#cyclesPerHour" value="20" />
+            <set path="placeable.productionPoint.productions.production(2)#costsPerActiveHour" value="3" />
+            <set path="placeable.productionPoint.productions.production(2).inputs.input(0)#fillType" value="WOODCHIPS" />
+            <set path="placeable.productionPoint.productions.production(2).inputs.input(0)#amount" value="450" />
+            <set path="placeable.productionPoint.productions.production(2).outputs.output(0)#fillType" value="CARTONROLL" />
+            <set path="placeable.productionPoint.productions.production(2).outputs.output(0)#amount" value="250" />
+
+            <!-- add a recipe for the paper rolls from wood chips -->
+            <set path="placeable.productionPoint.productions.production(3)#id" value="paperRoll_chips" />
+            <set path="placeable.productionPoint.productions.production(3)#name" value="$l10n_recipe_paperRollWoodChips" />
+            <set path="placeable.productionPoint.productions.production(3)#cyclesPerHour" value="20" />
+            <set path="placeable.productionPoint.productions.production(3)#costsPerActiveHour" value="2" />
+            <set path="placeable.productionPoint.productions.production(3).inputs.input(0)#fillType" value="WOODCHIPS" />
+            <set path="placeable.productionPoint.productions.production(3).inputs.input(0)#amount" value="500" />
+            <set path="placeable.productionPoint.productions.production(3).outputs.output(0)#fillType" value="PAPERROLL" />
+            <set path="placeable.productionPoint.productions.production(3).outputs.output(0)#amount" value="280" />
+
+            <!-- update the capacities -->
+            <set path="placeable.productionPoint.storage.capacity(0)#capacity" value="300000" />
+            <set path="placeable.productionPoint.storage.capacity(1)#capacity" value="100000" />
+            <set path="placeable.productionPoint.storage.capacity(2)#capacity" value="100000" />
+            <set path="placeable.productionPoint.storage.capacity(3)#fillType" value="WOODCHIPS" />
+            <set path="placeable.productionPoint.storage.capacity(3)#capacity" value="500000" />
+            <set path="placeable.productionPoint.sellingStation.unloadTrigger(0)#fillTypes" value="WOOD WOODCHIPS" />
+
+        </attributes>
+    </parentFile>
+
+    <!-- ONLY FOR ICON GENERATION -->
+    <storeData>
+        <name>Paper Factory ++</name>
+        <image>store_paperFactoryWoodChips.dds</image>
+        <brand>NONE</brand>
+        <species>placeable</species>
+        <category>placeableMisc</category>
+    </storeData>
+</placeable>
